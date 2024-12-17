@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'exercise_details_page.dart'; // Import the ExerciseDetailsPage
+import 'exercise_details_page.dart';
 
 class ExerciseSelectionPage extends StatelessWidget {
   const ExerciseSelectionPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // List of exercises to display
     final List<String> exercises = [
       'Push-ups',
       'Squats',
@@ -22,18 +21,18 @@ class ExerciseSelectionPage extends StatelessWidget {
         backgroundColor: Colors.teal,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0), // Add padding around the ListView
+        padding: const EdgeInsets.all(16.0),
         child: ListView.builder(
           itemCount: exercises.length,
           itemBuilder: (context, index) {
             return Card(
-              margin: const EdgeInsets.symmetric(vertical: 8.0), // Add vertical margin between cards
-              elevation: 5, // Add elevation to give a shadow effect
+              margin: const EdgeInsets.symmetric(vertical: 8.0),
+              elevation: 5,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12), // Rounded corners
+                borderRadius: BorderRadius.circular(12),
               ),
               child: ListTile(
-                contentPadding: const EdgeInsets.all(16.0), // Add padding inside the ListTile
+                contentPadding: const EdgeInsets.all(16.0),
                 leading: const CircleAvatar(
                   backgroundColor: Colors.teal,
                   child: Icon(
@@ -44,7 +43,7 @@ class ExerciseSelectionPage extends StatelessWidget {
                 title: Text(
                   exercises[index],
                   style: const TextStyle(
-                    fontSize: 18, // Increase font size for readability
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -66,5 +65,3 @@ class ExerciseSelectionPage extends StatelessWidget {
     );
   }
 }
-
-

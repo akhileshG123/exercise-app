@@ -59,7 +59,8 @@ class _TimerPageState extends State<TimerPage> {
   @override
   void initState() {
     super.initState();
-    _confettiController = ConfettiController(duration: const Duration(seconds: 3));
+    _confettiController =
+        ConfettiController(duration: const Duration(seconds: 3));
     _loadMusicPreference();
     _fetchQuote();
     _checkCompletionStatus();
@@ -69,7 +70,8 @@ class _TimerPageState extends State<TimerPage> {
   /// Fetch a random motivational quote from an API.
   Future<void> _fetchQuote() async {
     try {
-      final response = await http.get(Uri.parse('https://dummyjson.com/quotes'));
+      final response =
+          await http.get(Uri.parse('https://dummyjson.com/quotes'));
       if (response.statusCode == 200) {
         final data = response.body;
         final quotes = data.split('"quote":')[1].split('"')[1];
@@ -227,7 +229,8 @@ class _TimerPageState extends State<TimerPage> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => ExerciseResultPage(exerciseName: widget.exerciseName),
+        builder: (context) =>
+            ExerciseResultPage(exerciseName: widget.exerciseName),
       ),
     );
   }
@@ -289,7 +292,7 @@ class _TimerPageState extends State<TimerPage> {
               style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
-            const Spacer(), // Pushes content to center
+            const Spacer(),
             // Complete Exercise button
             Padding(
               padding: const EdgeInsets.only(bottom: 32.0),
@@ -303,8 +306,9 @@ class _TimerPageState extends State<TimerPage> {
                   }
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.teal, // Button color
-                  padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+                  backgroundColor: Colors.teal,
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
@@ -320,7 +324,14 @@ class _TimerPageState extends State<TimerPage> {
               confettiController: _confettiController,
               blastDirectionality: BlastDirectionality.explosive,
               shouldLoop: false,
-              colors: const [Colors.red, Colors.orange, Colors.yellow, Colors.green, Colors.blue, Colors.purple],
+              colors: const [
+                Colors.red,
+                Colors.orange,
+                Colors.yellow,
+                Colors.green,
+                Colors.blue,
+                Colors.purple
+              ],
             ),
           ],
         ),
@@ -328,5 +339,3 @@ class _TimerPageState extends State<TimerPage> {
     );
   }
 }
-
-

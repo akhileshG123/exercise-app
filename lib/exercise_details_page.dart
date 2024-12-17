@@ -39,9 +39,8 @@ class ExerciseDetailsPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Exercise image
             ClipRRect(
-              borderRadius: BorderRadius.circular(12), // Rounded corners
+              borderRadius: BorderRadius.circular(12),
               child: Image.asset(
                 getImagePath(),
                 width: double.infinity,
@@ -50,23 +49,21 @@ class ExerciseDetailsPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            // Instructions title
             Text(
               'Instructions:',
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                  ) ??
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                      ) ??
                   const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
-            // Instructions text
             Text(
               exerciseDetails[exerciseName] ?? 'No details available.',
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    fontSize: 16,
-                    color: Colors.grey[700],
-                  ) ??
+                        fontSize: 16,
+                        color: Colors.grey[700],
+                      ) ??
                   TextStyle(fontSize: 16, color: Colors.grey[700]),
             ),
             const SizedBox(height: 20),
@@ -81,18 +78,19 @@ class ExerciseDetailsPage extends StatelessWidget {
                 );
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.teal, // Button color
-                padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+                backgroundColor: Colors.teal,
+                padding:
+                    const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
-                elevation: 5, // Add shadow to the button
+                elevation: 5,
               ),
               child: const Text(
                 'Start Exercise',
                 style: TextStyle(
                   fontSize: 18,
-                  fontWeight: FontWeight.bold, // Bold text for emphasis
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
@@ -102,5 +100,3 @@ class ExerciseDetailsPage extends StatelessWidget {
     );
   }
 }
-
-

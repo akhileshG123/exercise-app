@@ -1,37 +1,33 @@
 import 'package:audioplayers/audioplayers.dart';
-import 'package:flutter/services.dart'; // For accessing assets
+import 'package:flutter/services.dart';
 
 class BackgroundMusicManager {
   // Singleton AudioPlayer instance to manage audio playback
   static final AudioPlayer _audioPlayer = AudioPlayer();
   static bool _isPlaying = false;
 
-  /// Play music from a given asset path.
-  ///
-  /// [assetPath] The path to the audio asset file.
   static Future<void> playMusic(String assetPath) async {
     // Check if music is already playing
     if (!_isPlaying) {
       try {
-        // Load the asset file from the bundle
         final ByteData data = await rootBundle.load(assetPath);
-        
+
         // Ensure the asset is not empty
         if (data.lengthInBytes > 0) {
           print("Asset file found: $assetPath");
-          
+
           // Set the audio source to the asset file
           await _audioPlayer.setSource(AssetSource(assetPath));
-          
+
           // Set the player to loop the music
           await _audioPlayer.setReleaseMode(ReleaseMode.loop);
-          
+
           // Set volume to maximum
           await _audioPlayer.setVolume(1.0);
-          
+
           // Start playing the music
           await _audioPlayer.resume();
-          
+
           // Mark as playing
           _isPlaying = true;
         } else {
@@ -54,7 +50,7 @@ class BackgroundMusicManager {
       try {
         // Pause the music
         await _audioPlayer.pause();
-        
+
         // Mark as not playing
         _isPlaying = false;
       } catch (e) {
@@ -67,5 +63,3 @@ class BackgroundMusicManager {
     }
   }
 }
-
-

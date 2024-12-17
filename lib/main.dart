@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:exercise_app/splash_page.dart'; // Adjust the import based on your file structure
+import 'package:exercise_app/splash_page.dart'; 
 
 void main() {
   runApp(const MyApp());
@@ -17,13 +17,12 @@ class MyApp extends StatelessWidget {
         textTheme: TextTheme(
           headlineMedium: const TextStyle(
               fontSize: 22,
-              fontWeight: FontWeight.bold), // Equivalent to headline6
+              fontWeight: FontWeight.bold),
           bodyMedium: TextStyle(
-              fontSize: 16, color: Colors.grey[700]), // Equivalent to bodyText2
+              fontSize: 16, color: Colors.grey[700]), 
         ),
 
-        // primarySwatch: Colors.teal,
-        // visualDensity: VisualDensity.adaptivePlatformDensity,
+       
       ),
       home: const SplashPage(),
     );
